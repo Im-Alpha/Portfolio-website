@@ -1,0 +1,49 @@
+/* Sass/SCSS function to convert from px to rem */
+/* Usage -- font-size: rem(16); */
+@use "sass:math";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Don\'t use units when using the rem() function; only numbers.';
+  }
+}
+
+*{
+  @apply transition-colors duration-200;
+}
+
+@layer base {
+  :root {
+    --color-bkg: #395276;
+    --color-content: #454545;
+    font-family: "Roboto", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bkg: #395276;
+      --color-content: #98b9db;
+      --color-accent1: #764739;
+      --color-accent2: #b5bdc5;
+      font-family: "Roboto", sans-serif;
+    }
+  }
+  :root[data-theme="dark"]{
+    --color-bkg: #395276;
+    --color-content: #98b9db;
+    --color-accent1: #764739;
+    --color-accent2: #b5bdc5;
+    font-family: "Roboto", sans-serif;
+  }
+  :root[data-theme="light"]{
+    --color-bkg: #eeeeee;
+    --color-content: #454545;
+    --color-accent1: #395276;
+    --color-accent2: #98b9db;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+

@@ -36,15 +36,15 @@
     --color-bkg: #395276;
     --color-content: #98b9db;
     // --color-content: #eeeeee;
-    --color-accent1: #eeeeee;
-    --color-accent2: #454545;
+    --color-accent1: #98b9db;
+    --color-accent2: #395276;
     // font-family: "Roboto", sans-serif;
   }
   :root[data-theme="light"]{
     --color-bkg: #eeeeee;
     --color-content: #454545;
-    --color-accent1: #395276;
-    --color-accent2: #98b9db;
+    --color-accent1: #454545;
+    --color-accent2: #eeeeee;
     // font-family: 'Roboto', sans-serif;
   }
 }
